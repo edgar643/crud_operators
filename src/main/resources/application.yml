@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: crud-operators
+  sleuth:
+    otel:
+      config:
+        trace-id-ratio-based: 1.0
+      exporter:
+        otlp:
+          endpoint: http://127.0.0.1:4317

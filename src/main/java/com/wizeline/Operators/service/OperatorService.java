@@ -14,9 +14,10 @@ import java.util.List;
  */
 public interface OperatorService {
 
-    public Operator saveOperator(Operator operator);
+     Operator saveOperator(Operator operator);
 
-    public List<Operator> getAllOperator();
+    List<Operator> getAllOperator();
 
-    public Operator getOperator(long cedula);
+     Operator getOperator(long cedula);
+      void deleteOperator(long cedula);
 }

@@ -40,14 +40,13 @@ public class OperatorServiceImpl implements OperatorService {
 
     @Override
     public Operator getOperator(long cedula) {
-//        Optional<Operator> operator = operatorRepository.findById(cedula);
-//        if (operator.isPresent()) {
-//            return operator.get();
-//        } else {
-//            throw new ResourceNotFoundException("Operator", "Cedula", cedula);
-//        }
+        return operatorRepository.findById(cedula)
+                                 .orElseThrow(() -> new ResourceNotFoundException("Operator", "cedula", cedula));
+    }
 
-return operatorRepository.findById(cedula).orElseThrow(()->new ResourceNotFoundException("Operator", "cedula", cedula));
+    @Override
+    public void deleteOperator(final long cedula) {
+       operatorRepository.deleteById(cedula);
     }
 
 }
